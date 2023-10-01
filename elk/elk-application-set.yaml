@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: elk-application-set
+  namespace: argocd
+spec:
+  generators:
+    - clusters: {} # Automatically use all clusters defined within Argo CD
+  template:
+    metadata:
+      name: '{{cluster}}-elk'
+    spec:
+      project: default
+      source:
+        repoURL: 'https://charts.bitnami.com/bitnami'
+        targetRevision: HEAD
+        chart: elk
+      destination:
+        server: '{{url}}'
+        namespace: elk

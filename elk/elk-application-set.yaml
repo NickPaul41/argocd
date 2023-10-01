@@ -17,7 +17,7 @@ spec:
       source:
         repoURL: 'https://charts.bitnami.com/bitnami'
         targetRevision: HEAD
-        chart: elk
+        chart: elasticsearch
       destination:
         server: '{{url}}'
         namespace: elk

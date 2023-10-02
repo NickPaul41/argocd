@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/NickPaul41/argocd.git
         revision: feature/elk
         directories:
-          - path: elasticsearch/elk-application-set.yaml
+          - path: elasticsearch/*
           - path: logstash/*
   template:
     metadata:
@@ -17,7 +17,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: https://github.com/argoproj/applicationset.git
+        repoURL: https://github.com/NickPaul41/argocd.git
         targetRevision: feature/elk
         path: '{{path}}'
       destination:

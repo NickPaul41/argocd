@@ -9,6 +9,12 @@ spec:
       elements:
       - cluster: microk8s
         url: https://kubernetes.default.svc
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
   template:
     metadata:
       name: '{{cluster}}-elk'
@@ -21,9 +27,4 @@ spec:
       destination:
         server: '{{url}}'
         namespace: elk
-    syncPolicy:
-      automated:
-        prune: true
-        selfHeal: true
-      syncOptions:
-        - CreateNamespace=true
+

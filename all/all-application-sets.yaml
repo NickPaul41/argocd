@@ -18,7 +18,7 @@ spec:
       project: default
       source:
         repoURL: https://github.com/argoproj/applicationset.git
-        targetRevision: HEAD
+        targetRevision: feature/elk
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc

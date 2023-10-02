@@ -16,7 +16,7 @@ spec:
       project: default
       source:
         repoURL: 'https://charts.bitnami.com/bitnami'
-        targetRevision: 19.20.0
+        targetRevision: 19.12.0
         chart: elasticsearch
       destination:
         server: '{{url}}'

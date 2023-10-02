@@ -23,16 +23,10 @@ spec:
             ingress:
               enabled: true
               path: /
-              hosts:
-                - elastic.k8s.nickpaul.me
-              annotations:
-                kubernetes.io/ingress.class: nginx
-                kubernetes.io/tls-acme: "true"
-              labels: { }
-              tls:
-                - secretName: elk-tls
-                  hosts:
-                    - elastic.k8s.nickpaul.me
+              hostname: elastic.k8s.nickpaul.me
+              tls: true
+              ingressClassName: nginx
+
       destination:
         server: '{{url}}'
         namespace: elk
